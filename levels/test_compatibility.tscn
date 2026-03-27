@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://3hk1jo2i0xt1"]
+
+[ext_resource type="Script" uid="uid://brmh3ghcasin8" path="res://levels/compatibility_manager.gd" id="1_bqk64"]
+[ext_resource type="PackedScene" uid="uid://c2wa4emaanwb3" path="res://scenes/controller/xr/xr_controls.tscn" id="2_shp63"]
+[ext_resource type="PackedScene" uid="uid://dxk0jcxqm7h8i" path="res://scenes/controller/touch/touch_controls.tscn" id="3_csdfq"]
+[ext_resource type="PackedScene" uid="uid://b4qfiuaedetx6" path="res://scenes/controller/desktop/desktop_controls.tscn" id="4_7n8p6"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_n57y4"]
+
+[sub_resource type="Sky" id="Sky_21qca"]
+sky_material = SubResource("ProceduralSkyMaterial_n57y4")
+
+[sub_resource type="Environment" id="Environment_nve0n"]
+background_mode = 2
+background_energy_multiplier = 2.11
+sky = SubResource("Sky_21qca")
+ambient_light_color = Color(0.99434763, 0.6288632, 0.23291129, 1)
+ambient_light_energy = 7.5
+
+[sub_resource type="BoxMesh" id="BoxMesh_c56sp"]
+size = Vector3(12, 0.1, 12)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n57y4"]
+size = Vector3(12, 0.1, 12)
+
+[node name="TestCompatibility" type="Node3D" unique_id=1637202604 node_paths=PackedStringArray("xr_controls", "desktop_controls", "touch_controls")]
+script = ExtResource("1_bqk64")
+xr_controls = NodePath("XRControls")
+desktop_controls = NodePath("DesktopControls")
+touch_controls = NodePath("TouchControls")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=59954671]
+environment = SubResource("Environment_nve0n")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2073814187]
+transform = Transform3D(0.84876764, -0.52876616, -1.2974091e-08, -0.0065873563, -0.0105739515, 0.9999224, -0.5287251, -0.8487017, -0.0124579985, 0, 15, 0)
+
+[node name="XRControls" parent="." unique_id=1429041128 instance=ExtResource("2_shp63")]
+
+[node name="TouchControls" parent="." unique_id=658088872 instance=ExtResource("3_csdfq")]
+
+[node name="DesktopControls" parent="." unique_id=1319562154 instance=ExtResource("4_7n8p6")]
+
+[node name="Floor" type="Node3D" parent="." unique_id=1485209660]
+transform = Transform3D(1.5250165, 0, 0, 0, 1, 0, 0, 0, 1.5646272, 0, 0, 0)
+metadata/_edit_group_ = true
+
+[node name="Mesh" type="MeshInstance3D" parent="Floor" unique_id=1738249516]
+transform = Transform3D(0.981, 0, 0, 0, 0.911, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_c56sp")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor/Mesh" unique_id=1978172866]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/Mesh/StaticBody3D" unique_id=195567340]
+shape = SubResource("BoxShape3D_n57y4")

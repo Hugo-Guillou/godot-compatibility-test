@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://b4qfiuaedetx6"]
+
+[ext_resource type="Script" uid="uid://bk2mmc0djro4n" path="res://scenes/controller/desktop/desktop_controls.gd" id="1_awyi6"]
+[ext_resource type="PackedScene" uid="uid://cobs8yshtmnl6" path="res://scenes/controller/player_controller.tscn" id="2_sc638"]
+
+[node name="DesktopControlsManager" type="Node3D" unique_id=1319562154 node_paths=PackedStringArray("player_controller")]
+script = ExtResource("1_awyi6")
+player_controller = NodePath("PlayerController")
+
+[node name="PlayerController" parent="." unique_id=64471350 instance=ExtResource("2_sc638")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
