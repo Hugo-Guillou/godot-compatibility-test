@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://c2wa4emaanwb3"]
+
+[ext_resource type="Script" uid="uid://doi8jvutcvaa4" path="res://scenes/controller/xr/xr_controls.gd" id="1_x228v"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_c331m"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n57y4"]
+albedo_color = Color(0.96774656, 0.11254739, 5.7756904e-07, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_21qca"]
+albedo_color = Color(0, 0.6007254, 0.05107007, 1)
+
+[node name="XRControls" type="Node3D" unique_id=1429041128 node_paths=PackedStringArray("xr_camera", "xr_hand_left", "xr_hand_right")]
+script = ExtResource("1_x228v")
+xr_camera = NodePath("XROrigin3D/XRCamera3D")
+xr_hand_left = NodePath("XROrigin3D/LeftHand")
+xr_hand_right = NodePath("XROrigin3D/RightHand")
+
+[node name="XROrigin3D" type="XROrigin3D" parent="." unique_id=1995496189]
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" unique_id=835111566]
+
+[node name="LeftHand" type="XRController3D" parent="XROrigin3D" unique_id=1781171127]
+tracker = &"left_hand"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/LeftHand" unique_id=120512669]
+transform = Transform3D(0.1241525, 0, 0, 0, 0.1241525, 0, 0, 0, 0.1241525, 0, 0, 0)
+mesh = SubResource("CylinderMesh_c331m")
+surface_material_override/0 = SubResource("StandardMaterial3D_n57y4")
+
+[node name="RightHand" type="XRController3D" parent="XROrigin3D" unique_id=1960926390]
+tracker = &"right_hand"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/RightHand" unique_id=1546714309]
+transform = Transform3D(0.1241525, 0, 0, 0, 0.1241525, 0, 0, 0, 0.1241525, 0, 0, 0)
+mesh = SubResource("CylinderMesh_c331m")
+surface_material_override/0 = SubResource("StandardMaterial3D_21qca")
