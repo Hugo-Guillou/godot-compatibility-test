@@ -2,7 +2,7 @@
 
 ## Requirements
 
-- [Godot 4.7](https://godotengine.org/download/archive/4.7-dev3/)
+- [Godot 4.7-dev2](https://godotengine.org/download/archive/4.7-dev2/)
 - [OpenJDK 17](https://adoptium.net/fr/temurin/releases?variant=openjdk17&version=17&os=any&arch=any)
 - [Android Studio](https://developer.android.com/studio?hl=fr)
 
