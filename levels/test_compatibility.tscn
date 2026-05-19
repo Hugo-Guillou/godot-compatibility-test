@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://3hk1jo2i0xt1"]
 
 [ext_resource type="Script" uid="uid://brmh3ghcasin8" path="res://levels/compatibility_manager.gd" id="1_bqk64"]
-[ext_resource type="PackedScene" uid="uid://c2wa4emaanwb3" path="res://scenes/controller/xr/xr_controls.tscn" id="2_shp63"]
-[ext_resource type="PackedScene" uid="uid://dxk0jcxqm7h8i" path="res://scenes/controller/touch/touch_controls.tscn" id="3_csdfq"]
-[ext_resource type="PackedScene" uid="uid://b4qfiuaedetx6" path="res://scenes/controller/desktop/desktop_controls.tscn" id="4_7n8p6"]
+[ext_resource type="PackedScene" uid="uid://c2wa4emaanwb3" path="res://scenes/cross_platform_controller/controller/xr/xr_controls.tscn" id="2_shp63"]
+[ext_resource type="PackedScene" uid="uid://dxk0jcxqm7h8i" path="res://scenes/cross_platform_controller/controller/touch/touch_controls.tscn" id="3_csdfq"]
+[ext_resource type="PackedScene" uid="uid://b4qfiuaedetx6" path="res://scenes/cross_platform_controller/controller/desktop/desktop_controls.tscn" id="4_7n8p6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_n57y4"]
 
@@ -37,8 +37,6 @@ transform = Transform3D(0.84876764, -0.52876616, -1.2974091e-08, -0.0065873563, 
 
 [node name="XRControls" parent="." unique_id=1429041128 instance=ExtResource("2_shp63")]
 
-[node name="TouchControls" parent="." unique_id=658088872 instance=ExtResource("3_csdfq")]
-
 [node name="DesktopControls" parent="." unique_id=1319562154 instance=ExtResource("4_7n8p6")]
 
 [node name="Floor" type="Node3D" parent="." unique_id=1485209660]
@@ -53,3 +51,5 @@ mesh = SubResource("BoxMesh_c56sp")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/Mesh/StaticBody3D" unique_id=195567340]
 shape = SubResource("BoxShape3D_n57y4")
+
+[node name="TouchControls" parent="." unique_id=658088872 instance=ExtResource("3_csdfq")]

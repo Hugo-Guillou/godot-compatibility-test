@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://c2wa4emaanwb3"]
+
+[ext_resource type="Script" uid="uid://doi8jvutcvaa4" path="res://scenes/cross_platform_controller/controller/xr/xr_controls.gd" id="1_x228v"]
+[ext_resource type="PackedScene" uid="uid://b4kad2kuba1yn" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_hand_low.tscn" id="2_bgitp"]
+[ext_resource type="PackedScene" uid="uid://l2n30mpbkdyw" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_hand_low.tscn" id="3_5qwjc"]
+[ext_resource type="PackedScene" uid="uid://fiul51tsyoop" path="res://addons/godot-xr-tools/functions/function_teleport.tscn" id="4_5qwjc"]
+[ext_resource type="Material" uid="uid://c252k604qr3k4" path="res://addons/godot-xr-tools/materials/capsule.tres" id="5_wp1b4"]
+[ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="6_jok0b"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_da3mr"]
+height = 1.7
+
+[node name="XRControls" type="Node3D" unique_id=1429041128 node_paths=PackedStringArray("xr_camera", "xr_hand_left", "xr_hand_right")]
+script = ExtResource("1_x228v")
+xr_camera = NodePath("XROrigin3D/XRCamera3D")
+xr_hand_left = NodePath("XROrigin3D/LeftController")
+xr_hand_right = NodePath("XROrigin3D/RightController")
+
+[node name="XROrigin3D" type="XROrigin3D" parent="." unique_id=1995496189]
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" unique_id=835111566]
+
+[node name="LeftController" type="XRController3D" parent="XROrigin3D" unique_id=1781171127]
+tracker = &"left_hand"
+
+[node name="LeftHand" parent="XROrigin3D/LeftController" unique_id=1365082686 instance=ExtResource("2_bgitp")]
+
+[node name="RightController" type="XRController3D" parent="XROrigin3D" unique_id=1960926390]
+tracker = &"right_hand"
+
+[node name="RightHand" parent="XROrigin3D/RightController" unique_id=1768900923 instance=ExtResource("3_5qwjc")]
+
+[node name="FunctionTeleport" parent="XROrigin3D/RightController/RightHand" unique_id=147721844 instance=ExtResource("4_5qwjc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
+player_material = ExtResource("5_wp1b4")
+
+[node name="PlayerBody" parent="XROrigin3D" unique_id=1702648559 instance=ExtResource("6_jok0b")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/PlayerBody" unique_id=46056151]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85, 0)
+shape = SubResource("CapsuleShape3D_da3mr")
