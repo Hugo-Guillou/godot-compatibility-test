@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://7v7dnmwrgi3q"]
+
+[ext_resource type="Texture2D" uid="uid://gocy05rd3t5l" path="res://resources/Louvre/Louvre_Wood_Cherry_Original.jpg" id="1_pqryn"]
+
+[resource]
+albedo_color = Color(1, 1, 0.99215686, 0.3764706)
+albedo_texture = ExtResource("1_pqryn")
+uv1_scale = Vector3(-1.6, 6.41, 1)
+uv1_offset = Vector3(0.075, 0.335, 0)

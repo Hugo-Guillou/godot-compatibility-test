@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://s8yfk6160xuv"]
+
+[ext_resource type="PackedScene" uid="uid://68dpmllnkiq3" path="res://scenes/cross_platform_controller/controls_manager.tscn" id="1_se5uf"]
+[ext_resource type="PackedScene" uid="uid://b5pjlhmojpdou" path="res://resources/Louvre/Louvre.glb" id="2_hhis6"]
+[ext_resource type="Material" uid="uid://7v7dnmwrgi3q" path="res://resources/Louvre/floor.tres" id="3_t6n6e"]
+[ext_resource type="Texture2D" uid="uid://c071qllcxmxwg" path="res://resources/Louvre/Louvre__Cladding_Stucco_White_13.jpg" id="4_i585u"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hhis6"]
+
+[sub_resource type="Sky" id="Sky_21qca"]
+sky_material = SubResource("ProceduralSkyMaterial_hhis6")
+
+[sub_resource type="Environment" id="Environment_5fo82"]
+background_mode = 2
+background_energy_multiplier = 2.11
+sky = SubResource("Sky_21qca")
+ambient_light_color = Color(0.99434763, 0.6288632, 0.23291129, 1)
+ambient_light_energy = 7.5
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hhis6"]
+size = Vector3(12.184704, 0.0401268, 66.503624)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5fo82"]
+size = Vector3(19.389437, 0.0401268, 17.844038)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_5280i"]
+material = ExtResource("3_t6n6e")
+size = Vector2(3.42, 7.15)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4pmhi"]
+albedo_texture = ExtResource("4_i585u")
+uv1_scale = Vector3(29.75, 73.8, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_uewcy"]
+material = SubResource("StandardMaterial3D_4pmhi")
+
+[node name="VisiteVirtuelle" type="Node3D" unique_id=351905505]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1014514069]
+environment = SubResource("Environment_5fo82")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2092154414]
+transform = Transform3D(0.84876764, -0.52876616, -1.2974091e-08, -0.0065873563, -0.0105739515, 0.9999224, -0.5287251, -0.8487017, -0.0124579985, 0, 15, 0)
+
+[node name="ControlsManager" parent="." unique_id=818343972 instance=ExtResource("1_se5uf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5044317, 1.5968971)
+
+[node name="Louvre" parent="." unique_id=2096289133 instance=ExtResource("2_hhis6")]
+transform = Transform3D(1.0013796, 0, 0, 0, 1.0013797, 0, 0, 0, 1.0013795, 0, 0, 0)
+
+[node name="FloorCorridor" type="StaticBody3D" parent="Louvre" unique_id=656029923]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Louvre/FloorCorridor" unique_id=2017600414]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.050374985, -0.020146204, 11.070416)
+shape = SubResource("BoxShape3D_hhis6")
+
+[node name="FlooShop" type="StaticBody3D" parent="Louvre" unique_id=305407028]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.506795, 0, -32.700947)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Louvre/FlooShop" unique_id=1959302855]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2663145, 0, 1.6517982)
+shape = SubResource("BoxShape3D_5fo82")
+
+[node name="MissingFloor" type="MeshInstance3D" parent="Louvre" unique_id=1497481527]
+transform = Transform3D(-3.9317825e-08, 0, 1.6159581, 0, 1, 0, -0.8994871, 0, -7.063577e-08, -0.0105855465, 0.011175989, -5.236412)
+mesh = SubResource("PlaneMesh_5280i")
+
+[node name="MissingFloor2" type="MeshInstance3D" parent="Louvre" unique_id=775697217]
+transform = Transform3D(-3.5365876e-08, 0, 1.6411593, 0, 0.99999917, 0, -0.809077, 0, -7.173738e-08, -0.11400687, 0.06747239, 3.5760133)
+mesh = SubResource("PlaneMesh_5280i")
+
+[node name="Wall" type="MeshInstance3D" parent="Louvre" unique_id=1970413404]
+transform = Transform3D(-1.9792446e-07, -0.99862224, 0, 4.5279837, -4.3651163e-08, 0, 0, 0, 32.93762, 6.025417, 4.50587, 10.941214)
+mesh = SubResource("PlaneMesh_uewcy")
+
+[node name="Wall2" type="MeshInstance3D" parent="Louvre" unique_id=161832552]
+transform = Transform3D(3.3974055e-07, 1, 0, -4.5, 7.54979e-08, 0, 0, 0, 33, -6.142, 4.489, 11.346)
+mesh = SubResource("PlaneMesh_uewcy")

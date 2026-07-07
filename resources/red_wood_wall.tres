@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cnbql0sxbguxr"]
+
+[ext_resource type="Texture2D" uid="uid://c071qllcxmxwg" path="res://resources/Louvre/Louvre__Cladding_Stucco_White_13.jpg" id="1_j7pja"]
+
+[resource]
+cull_mode = 2
+albedo_texture = ExtResource("1_j7pja")
