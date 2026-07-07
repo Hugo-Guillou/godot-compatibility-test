@@ -15,6 +15,7 @@ script = ExtResource("1_owyac")
 camera = NodePath("Camera3D")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=240644735]
+visible = false
 mesh = SubResource("CapsuleMesh_21qca")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1597377157]

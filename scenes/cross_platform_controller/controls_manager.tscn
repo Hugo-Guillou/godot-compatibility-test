@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://68dpmllnkiq3"]
+
+[ext_resource type="Script" uid="uid://brmh3ghcasin8" path="res://scripts/compatibility_manager.gd" id="1_aox88"]
+[ext_resource type="PackedScene" uid="uid://c2wa4emaanwb3" path="res://scenes/cross_platform_controller/controller/xr/xr_controls.tscn" id="2_k0hs2"]
+[ext_resource type="PackedScene" uid="uid://b4qfiuaedetx6" path="res://scenes/cross_platform_controller/controller/desktop/desktop_controls.tscn" id="3_gf73v"]
+[ext_resource type="PackedScene" uid="uid://dxk0jcxqm7h8i" path="res://scenes/cross_platform_controller/controller/touch/touch_controls.tscn" id="4_yvlbt"]
+
+[node name="ControlsManager" type="Node3D" unique_id=818343972 node_paths=PackedStringArray("xr_controls", "desktop_controls", "touch_controls")]
+script = ExtResource("1_aox88")
+xr_controls = NodePath("XRControls")
+desktop_controls = NodePath("DesktopControls")
+touch_controls = NodePath("TouchControls")
+
+[node name="XRControls" parent="." unique_id=1429041128 instance=ExtResource("2_k0hs2")]
+
+[node name="DesktopControls" parent="." unique_id=1319562154 instance=ExtResource("3_gf73v")]
+
+[node name="TouchControls" parent="." unique_id=658088872 instance=ExtResource("4_yvlbt")]
