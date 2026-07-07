@@ -19,6 +19,7 @@ Set exports as runnable:
 - Go To Project/Export...
 - For each export preset (Pico, Windows Desktop.. ) enable the Runnable option.
 This will allow you to run the project on different devices (hmd, phone, browser..)
+
 Note: Android and Pico can't be both set as runnable the same time, you have to enable/disable when you want to switch the device.
 
 ## Run The Project On A Remote Device
@@ -45,6 +46,10 @@ Make sure Android export preset is set as Runnable.
 
 Click on Remote Deploy. Your HMD name should appear in the dropdown list.
 
+![Remote Deploy](./doc/RemoteDeploy.png)
+
 ### WebXR
 
 Click on Remote Deploy/Start HTTP Server, then Remote Deploy/Run In Browser.
+
+![Remote Deploy](./doc/RemoteDeploy.png)
