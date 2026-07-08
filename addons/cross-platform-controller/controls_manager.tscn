@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://68dpmllnkiq3"]
 
-[ext_resource type="Script" uid="uid://brmh3ghcasin8" path="res://scripts/compatibility_manager.gd" id="1_aox88"]
-[ext_resource type="PackedScene" uid="uid://c2wa4emaanwb3" path="res://scenes/cross_platform_controller/controller/xr/xr_controls.tscn" id="2_k0hs2"]
-[ext_resource type="PackedScene" uid="uid://b4qfiuaedetx6" path="res://scenes/cross_platform_controller/controller/desktop/desktop_controls.tscn" id="3_gf73v"]
-[ext_resource type="PackedScene" uid="uid://dxk0jcxqm7h8i" path="res://scenes/cross_platform_controller/controller/touch/touch_controls.tscn" id="4_yvlbt"]
+[ext_resource type="Script" uid="uid://brmh3ghcasin8" path="res://addons/cross-platform-controller/compatibility_manager.gd" id="1_aox88"]
+[ext_resource type="PackedScene" uid="uid://c2wa4emaanwb3" path="res://addons/cross-platform-controller/controller/xr/xr_controls.tscn" id="2_k0hs2"]
+[ext_resource type="PackedScene" uid="uid://b4qfiuaedetx6" path="res://addons/cross-platform-controller/controller/desktop/desktop_controls.tscn" id="3_gf73v"]
+[ext_resource type="PackedScene" uid="uid://dxk0jcxqm7h8i" path="res://addons/cross-platform-controller/controller/touch/touch_controls.tscn" id="4_yvlbt"]
 
 [node name="ControlsManager" type="Node3D" unique_id=818343972 node_paths=PackedStringArray("xr_controls", "desktop_controls", "touch_controls")]
 script = ExtResource("1_aox88")

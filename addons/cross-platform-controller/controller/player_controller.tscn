@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cobs8yshtmnl6"]
 
-[ext_resource type="Script" uid="uid://brgjjykjspmru" path="res://scenes/cross_platform_controller/controller/fps_player_controller.gd" id="1_owyac"]
+[ext_resource type="Script" uid="uid://brgjjykjspmru" path="res://addons/cross-platform-controller/controller/fps_player_controller.gd" id="1_owyac"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_21qca"]
 radius = 0.4

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://1eey0xth0qhf"]
 
-[ext_resource type="Script" uid="uid://p2ulx48xjsc1" path="res://scenes/cross_platform_controller/controller/touch/ui/touch_joystick_ui.gd" id="1_ll7rc"]
+[ext_resource type="Script" uid="uid://p2ulx48xjsc1" path="res://addons/cross-platform-controller/controller/touch/ui/touch_joystick_ui.gd" id="1_ll7rc"]
 [ext_resource type="Script" uid="uid://berokbx027ah1" path="res://addons/touch_screen_joystick/touch_screen_joystick.gd" id="1_wuvxo"]
 
 [node name="TouchJoystick" type="Control" unique_id=1976295016]

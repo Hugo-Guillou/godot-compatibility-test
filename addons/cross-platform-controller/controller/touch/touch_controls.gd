@@ -8,4 +8,3 @@ extends Node3D
 func enable_controls() -> void:
 
 	player_controller.camera.current = true
-

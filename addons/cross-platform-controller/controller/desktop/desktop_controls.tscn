@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b4qfiuaedetx6"]
 
-[ext_resource type="Script" uid="uid://dxwlvrilk18ce" path="res://scenes/cross_platform_controller/controller/desktop/desktop_controls.gd" id="1_awyi6"]
-[ext_resource type="PackedScene" uid="uid://cobs8yshtmnl6" path="res://scenes/cross_platform_controller/controller/player_controller.tscn" id="2_sc638"]
+[ext_resource type="Script" uid="uid://dxwlvrilk18ce" path="res://addons/cross-platform-controller/controller/desktop/desktop_controls.gd" id="1_awyi6"]
+[ext_resource type="PackedScene" uid="uid://cobs8yshtmnl6" path="res://addons/cross-platform-controller/controller/player_controller.tscn" id="2_sc638"]
 
 [node name="DesktopControlsManager" type="Node3D" unique_id=1319562154 node_paths=PackedStringArray("player_controller")]
 script = ExtResource("1_awyi6")

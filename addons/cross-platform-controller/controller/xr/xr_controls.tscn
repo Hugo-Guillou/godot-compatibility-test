@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c2wa4emaanwb3"]
 
-[ext_resource type="Script" uid="uid://doi8jvutcvaa4" path="res://scenes/cross_platform_controller/controller/xr/xr_controls.gd" id="1_x228v"]
+[ext_resource type="Script" uid="uid://doi8jvutcvaa4" path="res://addons/cross-platform-controller/controller/xr/xr_controls.gd" id="1_x228v"]
 [ext_resource type="PackedScene" uid="uid://b4kad2kuba1yn" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_hand_low.tscn" id="2_bgitp"]
 [ext_resource type="PackedScene" uid="uid://l2n30mpbkdyw" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_hand_low.tscn" id="3_5qwjc"]
 [ext_resource type="PackedScene" uid="uid://fiul51tsyoop" path="res://addons/godot-xr-tools/functions/function_teleport.tscn" id="4_5qwjc"]

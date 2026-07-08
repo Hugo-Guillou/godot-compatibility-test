@@ -14,7 +14,6 @@ func _ready() -> void:
 	for feed in CameraServer.feeds():
 		print("feed :" + feed.get_name())
 
-	
 
 	var device_name:String = OS.get_name()
 			

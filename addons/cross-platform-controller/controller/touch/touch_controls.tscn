@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dxk0jcxqm7h8i"]
 
-[ext_resource type="Script" uid="uid://dpenjmgamvn2a" path="res://scenes/cross_platform_controller/controller/touch/touch_controls.gd" id="1_d6npg"]
-[ext_resource type="PackedScene" uid="uid://1eey0xth0qhf" path="res://scenes/cross_platform_controller/controller/touch/ui/touch_joystick_ui.tscn" id="2_3ua2x"]
-[ext_resource type="PackedScene" uid="uid://cobs8yshtmnl6" path="res://scenes/cross_platform_controller/controller/player_controller.tscn" id="3_rcns1"]
+[ext_resource type="Script" uid="uid://dpenjmgamvn2a" path="res://addons/cross-platform-controller/controller/touch/touch_controls.gd" id="1_d6npg"]
+[ext_resource type="PackedScene" uid="uid://1eey0xth0qhf" path="res://addons/cross-platform-controller/controller/touch/ui/touch_joystick_ui.tscn" id="2_3ua2x"]
+[ext_resource type="PackedScene" uid="uid://cobs8yshtmnl6" path="res://addons/cross-platform-controller/controller/player_controller.tscn" id="3_rcns1"]
 
 [node name="TouchControls" type="Node3D" unique_id=658088872 node_paths=PackedStringArray("player_controller")]
 script = ExtResource("1_d6npg")
