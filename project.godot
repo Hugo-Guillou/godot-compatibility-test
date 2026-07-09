@@ -64,7 +64,7 @@ LookRight={
 "deadzone": 0.2,
 "events": []
 }
-LookBack={
+LookDown={
 "deadzone": 0.2,
 "events": []
 }

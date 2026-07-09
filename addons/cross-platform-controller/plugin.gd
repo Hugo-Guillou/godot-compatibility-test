@@ -59,7 +59,7 @@ func _on_setup_accepted():
 	ProjectSettings.set_setting("input/LookUp", input_look)
 	ProjectSettings.set_setting("input/LookLeft", input_look)
 	ProjectSettings.set_setting("input/LookRight", input_look)
-	ProjectSettings.set_setting("input/LookBack", input_look)
+	ProjectSettings.set_setting("input/LookDown", input_look)
 	
 	# Set Export Presets #######################################################
 
