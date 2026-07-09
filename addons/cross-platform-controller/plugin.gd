@@ -12,8 +12,9 @@ func _enable_plugin() -> void:
 						 	   "The following settings will be changed :\n" + \
 						 	   "    - OpenXR and XR Shaders\n" + \
 						 	   "    - Input Map\n" + \
+							   "    - Export Presets\n" +\
 							   #"\n" +\
-							   "They won't be reverted if you disable the plugin"
+							   "They won't be reverted if you disable the plugin !"
 	setup_dialog.ok_button_text = "Yes"
 	setup_dialog.add_cancel_button("No")
 	setup_dialog.confirmed.connect(_on_setup_accepted)
@@ -21,12 +22,13 @@ func _enable_plugin() -> void:
 
 func _on_setup_accepted():
 	
-	# Enable XR ################################################################
+	# Enable XR settings #######################################################
 	
 	ProjectSettings.set_setting("xr/openxr/enabled", true)
 	ProjectSettings.set_setting("xr/openxr/startup_alert", false)
 	ProjectSettings.set_setting("xr/shaders/enabled", true)
-	
+	ProjectSettings.set_setting("rendering/textures/vram_compression/import_etc2_astc", true)
+
 	# Set input map for desktop controller #####################################
 
 	var move_front_key = InputEventKey.new()
@@ -60,8 +62,37 @@ func _on_setup_accepted():
 	ProjectSettings.set_setting("input/LookBack", input_look)
 	
 	# Set Export Presets #######################################################
+
+	# Backup current presets 
 	
+	if FileAccess.file_exists("res://export_presets.cfg") : # If no export presets, don't backup
+		
+		var bkp_path = "res://export_presets_bkp.cfg"
+		var bkp_count : int = 0
+		
+		while FileAccess.file_exists(bkp_path):	 # Increment version number so we don't erase any old backups  
+			bkp_count += 1
+			bkp_path = "res://export_presets_bkp_%d.cfg" % bkp_count
+			
+		var old_presets = FileAccess.open("res://export_presets.cfg", FileAccess.READ)
+		var old_presets_bkp = FileAccess.open(bkp_path, FileAccess.WRITE)
+
+		old_presets_bkp.store_string(old_presets.get_as_text())
+		
+		old_presets.close()
+		old_presets_bkp.close()
+		
+		print("Backup file for export presets has been created in %s" % bkp_path)
+		
+	# Write new presets
 	
+	var new_presets = FileAccess.open("res://addons/cross-platform-controller/export_presets.cfg", FileAccess.READ)
+	var presets = FileAccess.open("res://export_presets.cfg", FileAccess.WRITE)
+		
+	presets.store_string(new_presets.get_as_text())
+	
+	new_presets.close()
+	presets.close()
 	
 	# Popup Window for Restart ########################################################
 	

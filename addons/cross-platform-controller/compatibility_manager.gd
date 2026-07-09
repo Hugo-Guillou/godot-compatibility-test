@@ -8,16 +8,10 @@ var xr_interface: XRInterface
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
-	print("cameras")
-
-	for feed in CameraServer.feeds():
-		print("feed :" + feed.get_name())
-
 
 	var device_name:String = OS.get_name()
 			
-	print(device_name)
+	print("Platform detected : " + device_name)
 			
 	match(device_name):
 		
